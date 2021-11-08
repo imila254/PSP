@@ -17,7 +17,6 @@ import java.util.Objects;
 public class User implements Comparable<User>{
 
     @Id
-   // @GeneratedValue(strategy = GenerationType.AUTO)
     private Long userId;
     private String name;
     private String surname;
@@ -30,7 +29,6 @@ public class User implements Comparable<User>{
 
     public User(Long userId, String name, String surname, String phoneNumber, String email, String address, String password){
         super();
-        //userFieldsValidation(name, surname, phoneNumber, email, address, password);
         this.name = name;
         this.surname = surname;
         this.phoneNumber = phoneNumber;
@@ -42,7 +40,6 @@ public class User implements Comparable<User>{
 
     public User(String name, String surname, String phoneNumber, String email, String address, String password){
         super();
-        //userFieldsValidation(name, surname, phoneNumber, email, address, password);
         this.name = name;
         this.surname = surname;
         this.phoneNumber = phoneNumber;
@@ -150,14 +147,6 @@ public class User implements Comparable<User>{
             throw new IllegalArgumentException("INVALID PHONE NUMBER");
 
         else return true;
-
-//        if (!phoneValidator.notEmpty(phoneNumber)
-//                || !phoneValidator.onlyNumbers(phoneNumber)
-//                //|| !phoneValidator.numberLength(phoneNumber,12)
-//               // || !phoneValidator.checkCountryCode(phoneNumber, "Lithuania")
-//            )
-//            throw new IllegalArgumentException("INVALID PHONE NUMBER");
-//        else return true;
     }
 
     public boolean isEmailValid(String email){
