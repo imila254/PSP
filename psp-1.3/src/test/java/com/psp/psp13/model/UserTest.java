@@ -32,7 +32,7 @@ public class UserTest {
     @ValueSource(strings = {"email@email.com", "g@mail.com"})
     void isEmailValid_Test(String string){
         User user = new User();
-        user.isEmailValid(string);
+        assertTrue(user.isEmailValid(string));
     }
 
 
@@ -40,6 +40,6 @@ public class UserTest {
     @ValueSource(strings = {"P@Ssword123", "My$uper$tr0ngP@ssw0rd"})
     void isPasswordValid_Test(String string){
         User user = new User();
-        user.isPasswordValid(string);
+        assertTrue(user.isPasswordValid(string));
     }
 }
